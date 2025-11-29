@@ -39,6 +39,7 @@ def initialize():
 
 def process_urls(urls):
     initialize()
+    vector_store.reset_collection()
     yield "Loading data from url"
     loader = WebBaseLoader(urls)
     data= loader.load()
@@ -53,14 +54,9 @@ def process_urls(urls):
 
     yield "Chunks created, storing in a vector store.."
 
-    stored_sources = [doc['source'] for doc in vector_store.get()['metadatas']]
-    updated_docs = []
-    for doc in docs:
-        if doc.metadata['source'] not in stored_sources:
-            updated_docs.append(doc)
-    if updated_docs:
-        uuids = [str (uuid4()) for _ in range(len(updated_docs))]
-        vector_store.add_documents(updated_docs,ids = uuids)
+    if docs:
+        uuids = [str (uuid4()) for _ in range(len(docs))]
+        vector_store.add_documents(docs,ids = uuids)
 
 
 def generate(query):
