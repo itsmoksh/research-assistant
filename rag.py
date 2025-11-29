@@ -10,7 +10,7 @@ from uuid import uuid4
 from dotenv import load_dotenv
 
 load_dotenv()
-
+vector_store.reset_collection()
 #Constants
 CHUNK_SIZE = 1000
 COLLECTION_NAME = "real_estate"
@@ -39,7 +39,6 @@ def initialize():
 
 def process_urls(urls):
     initialize()
-    vector_store.reset_collection()
     yield "Loading data from url"
     loader = WebBaseLoader(urls)
     data= loader.load()
