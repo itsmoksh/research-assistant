@@ -10,7 +10,6 @@ from uuid import uuid4
 from dotenv import load_dotenv
 
 load_dotenv()
-vector_store.reset_collection()
 #Constants
 CHUNK_SIZE = 1000
 COLLECTION_NAME = "real_estate"
@@ -35,6 +34,8 @@ def initialize():
             persist_directory= './resources/vectorstore',
             embedding_function=ef,
         )
+    else:
+        vector_store.reset_collection()
 
 
 def process_urls(urls):
