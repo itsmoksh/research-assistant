@@ -2,6 +2,7 @@ import streamlit as st
 from rag import process_urls,generate
 st.title("Universal Research Assistant")
 
+#Url sidebar
 st.sidebar.subheader("Enter Url's")
 url1 = st.sidebar.text_input("URL 1")
 url2 = st.sidebar.text_input("URL 2")
@@ -23,6 +24,7 @@ if process_urls_button:
 
 prompt = st.chat_input("Ask your Question")
 
+#Showing previous conversations.
 if 'message' not in st.session_state:
     st.session_state['message'] = []
 
@@ -41,6 +43,7 @@ for message in st.session_state['message']:
                 st.caption("Sources")
                 st.markdown(message['source'])
 
+# Generating results
 if prompt:
     try:
         solution, sources = generate(prompt)
