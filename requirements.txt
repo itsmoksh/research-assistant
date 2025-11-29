@@ -1,0 +1,8 @@
+langchain-community~=0.4.1
+langchain-text-splitters~=1.0.0
+langchain-core~=1.1.0
+python-dotenv~=1.1.0
+streamlit~=1.46.0
+langchain-chroma==1.0.0
+langchain-groq==1.1.0
+langchain-huggingface==1.1.0
