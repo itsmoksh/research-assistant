@@ -37,7 +37,8 @@ def initialize():
 
 def reset_vector_store():
     global vector_store
-    vector_store.reset_collection()
+    if vector_store is not None:
+        vector_store.reset_collection()
 
 def process_urls(urls):
     initialize()
