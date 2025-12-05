@@ -16,6 +16,24 @@ The user can drop URLs and ask questions to receive relevant insights from that 
 ## Architecture of Research Assistant
 ![Architecture](assets/architecture.png)
 
+## 🧠 Tech Stack
+
+### Backend & Core
+- Python
+- LangChain
+- Chroma Vector Database
+- Groq LLMs (Llama 3.3)
+- HuggingFace Embeddings (Alibaba-NLP/gte-base-en-v1.5)
+
+### Document Processing
+- Web scraping (WebBaseLoader)
+- Text chunking (RecursiveCharacterTextSplitter)
+- Prompt templates (PromptTemplate)
+
+### Utilities
+- Environment configuration with `.env`
+- UUID-based document/session IDs
+
 ---
 ## Set-Up
 1. Clone the repository
@@ -47,8 +65,9 @@ Database in the form of embeddings. Then, it's ready to give the answers.
 Here's the next question, asked by the bot, about the model capabilities and the purpose of launching the model.
 
 ---
-**Try it out**: [Streamlit App](https://moksh-research-assistant.streamlit.app/)
+**Try it out**:
+**[Open Streamlit App](https://moksh-research-assistant.streamlit.app/)**
 
 **Moksh Jain**
 
-[LinkedIn](https://www.linkedin.com/in/itsmoksh/) • [GitHub](https://github.com/itsmoksh)
+[LinkedIn](https://www.linkedin.com/in/itsmoksh/) • [GitHub](https://github.com/itsmoksh) • [Portfolio](https://codebasics.io/portfolio/Moksh-Jain)
